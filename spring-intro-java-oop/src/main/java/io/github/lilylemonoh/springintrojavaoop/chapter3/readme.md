@@ -90,5 +90,3 @@ Mouse mickey = new Mouse();
 * 객체 지향 4대 특성 지원 : class, extends, new, private, protected, public, static
 
 읽기 - p153
-정리 - 124p
-F
