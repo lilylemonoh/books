@@ -88,5 +88,3 @@ Mouse mickey = new Mouse();
 
 ## 정리 - 자바 키워드와 OOP 4대 특성
 * 객체 지향 4대 특성 지원 : class, extends, new, private, protected, public, static
-
-읽기 - p153
