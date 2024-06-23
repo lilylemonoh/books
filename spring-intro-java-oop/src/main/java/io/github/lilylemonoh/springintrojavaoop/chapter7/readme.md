@@ -44,5 +44,31 @@
 * PointCut
 
 ### Pointcut - 자르는 지점? Aspect 적용 위치 지정자!
+```java
+@Before("execution(* runSomething())")
+public void before(JoinPoint joinPoint){}
+```
+* '* runSomething()'이 바로 Pointcut이다.   
+* @Before("execution(* runSomething())")은 지금 선언하고 있는 메서드를 (* runSomething) 메서드가 실행되기 전에 실행하라는 의미다.  
+* 결국 Pointcut이라고 하는 것은 횡단 관심사를 적용할 타깃 메서드를 선택하는 지시자(메서드 선택 필터)이다.
+* "타깃 클래스의 타깃 메서드 지정자"
+* 타깃 메서드 지정자에는 정규식과 AspectJ 표현식 등을 사용할 수 있다.
+
+### JoinPoint - 연결점? 연결 가능한 지점!
+* Pointcut은 JoinPoint의 부분 집합이다. 
+* PointCut의 후보가 되는 모든 메서드들이 JoinPoint, 즉 Aspect 적용이 가능한 지점이 된다. 
+* 협의의 JoinPoint란 호출된 객체의 메서드다.
+
+### Advice - 조언? 언제, 무엇을!
+* Advice는 pointcut에 적용할 로직, 즉 메서드를 의미하는데, 여기에 더해 언제라는 개념까지 포함하고 있다.
+* 결국 Advice란 Pointcut에 언제, 무엇을 적용할지 정의한 메서드다.
+
+### Aspect - 관점? 측면? Advisor의 집합체!
+* AOP에서 Aspect는 여러 개의 Advice와 여러 개의 Pointcut의 결합체를 의미하는 용어다.
+
+### Advisor - 조언자? 어디서, 언제, 무엇을!
+* Advisor = 한 개의 Advice + 한 개의 Pointcut
 
 ## 03 PSA - 일관성 있는 서비스 추상화
+* 서비스 추상화의 예 - JDBC
+* 어댑터 패턴을 적용해 같은 일을 하는 다수의 기술을 공통의 인터페이스로 제어할 수 있게 한 것
